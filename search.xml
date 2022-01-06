@@ -1,6 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Excel数字前（列）批量加0</title>
+    <url>/2022/01/06/Excel-S0/</url>
+    <content><![CDATA[<p>有时从数据库里导出的Excel数据，前面有0的会被去除，行数非常多，处理比较麻烦。最近学到Excel的一招，就是快速给数字类型的值在前面补零。</p>
+<p><img src="https://s4.ax1x.com/2022/01/06/TxGVH0.jpg" alt="excel怎样在数字前加0？批量一次性在数字前加0">](<a href="https://imgtu.com/i/TxGVH0">https://imgtu.com/i/TxGVH0</a>)</p>
+<h1 id="第一步，先通过公式处理得到结果"><a href="#第一步，先通过公式处理得到结果" class="headerlink" title="第一步，先通过公式处理得到结果"></a>第一步，先通过公式处理得到结果</h1><p>在数据这一列侧边插入一列（若数据列侧边有空白列就不用插入列）。</p>
+<p>比如，现在B列是空白列，那么，我们就用B列来操作。</p>
+<p><img src="https://s4.ax1x.com/2022/01/06/TxGEBq.jpg" alt="excel怎样在数字前加0？批量一次性在数字前加0">](<a href="https://imgtu.com/i/TxGEBq">https://imgtu.com/i/TxGEBq</a>)</p>
+<p>接着把B列（或者与左边相同的行数）选中；</p>
+<p>然后，在编辑栏中输入：<strong>＝0&amp;A1</strong></p>
+<p><strong>再按CTRL+回车键。</strong></p>
+<p><img src="https://s4.ax1x.com/2022/01/06/TxGeEV.jpg" alt="excel怎样在数字前加0？批量一次性在数字前加0">](<a href="https://imgtu.com/i/TxGeEV">https://imgtu.com/i/TxGeEV</a>)</p>
+<p><img src="https://s4.ax1x.com/2022/01/06/TxGmNT.jpg" alt="excel怎样在数字前加0？批量一次性在数字前加0">](<a href="https://imgtu.com/i/TxGmNT">https://imgtu.com/i/TxGmNT</a>)</p>
+<p>B列即得出相应的结果；鼠标在其它单元格点下。</p>
+<p><img src="https://s4.ax1x.com/2022/01/06/TxGn4U.jpg" alt="excel怎样在数字前加0？批量一次性在数字前加0">](<a href="https://imgtu.com/i/TxGn4U">https://imgtu.com/i/TxGn4U</a>)</p>
+<p><img src="https://s4.ax1x.com/2022/01/06/TxGKCF.jpg" alt="excel怎样在数字前加0？批量一次性在数字前加0">](<a href="https://imgtu.com/i/TxGKCF">https://imgtu.com/i/TxGKCF</a>)</p>
+<h1 id="第二步，复制粘贴为数值"><a href="#第二步，复制粘贴为数值" class="headerlink" title="第二步，复制粘贴为数值"></a>第二步，复制粘贴为数值</h1><p>如果只是需要显示查看的话，到此就可以结束。</p>
+<p><strong>如果B列可能还要用到导入其它数据库，那么要进行复制粘贴为数值</strong>。</p>
+<p>因为目前B列的值还是公式，而不是最终的数值，导入数据库可能会不识别。</p>
+<p>因此需要再转换一下，复制它们，<strong>最后鼠标右键选择数值粘贴。</strong></p>
+<p><img src="https://s4.ax1x.com/2022/01/06/TxGM34.jpg" alt="excel怎样在数字前加0？批量一次性在数字前加0">](<a href="https://imgtu.com/i/TxGM34">https://imgtu.com/i/TxGM34</a>)</p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>Excel</tag>
+        <tag>批量</tag>
+        <tag>技巧</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>解决“索引超出了数组界限”</title>
+    <url>/2021/05/31/Config-Array-Out/</url>
+    <content><![CDATA[<p>今天踩了个坑。周末加班搞了个异构数据同步的中间件工具，本地调试编译好后部署到正式环境，一直提示：</p>
+<blockquote>
+<p>索引超出了数组界限</p>
+</blockquote>
+<p>开始根据提示检查源代码里数组看哪个数组超出了个数，但我自己电脑上都是运行正常的，怎么到了其它电脑上就出现这个异常提示？所以肯定不是数组超出个数的原因。</p>
+<p>而且它是第一个数组就提示异常，我就怀疑可能是它读取不到配置文件里的参数导致，最后还真是这么一回事。搜索了很多资料，终于找到一个对头的原因，很简单，错误也很低级。</p>
+<blockquote>
+<p>就是配置文件ini文件首行要留空</p>
+</blockquote>
+<p>我Windows 10首行不留空可以正常读取识别，但服务器Windows Server 2012和2008都不认。</p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>中间件</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Nginx配置详解</title>
     <url>/2021/06/05/Nginx-Config-ReadMe/</url>
     <content><![CDATA[<p><img src="https://p1-tt.byteimg.com/origin/pgc-image/2a700e0812404381b24db87505f22a53?from=pc" alt="程序员安全规范：安全无小事，安全防范从nginx配置做起"></p>
@@ -105,31 +157,6 @@
       </tags>
   </entry>
   <entry>
-    <title>PSElements2021智能修图，超乎想象</title>
-    <url>/2021/05/30/PS-Elements-2021/</url>
-    <content><![CDATA[<blockquote>
-<p>Photoshop Elements功能与Photoshop差不多，同样拥有强大的照片编辑功能，但是Photoshop Elements2021主打的是智能照片处理功能，软件内置的Adobe Sensei AI 驱动技术能够帮助用户快速的对图片进行处理，它能够帮助用户一键式处理图片，图片处理的速度也会比PS更快。</p>
-</blockquote>
-<h2 id="智能抠图，一键换背景"><a href="#智能抠图，一键换背景" class="headerlink" title="智能抠图，一键换背景"></a>智能抠图，一键换背景</h2><p><img src="https://p3-tt.byteimg.com/origin/pgc-image/ef83b40b96db48739d873ae48d7cfc1b?from=pc" alt="修图操作更专业的全新人工智能PSElements2021，功能效果秒杀PS"></p>
-<h2 id="智能完美移除图片对象"><a href="#智能完美移除图片对象" class="headerlink" title="智能完美移除图片对象"></a>智能完美移除图片对象</h2><p><img src="https://p6-tt.byteimg.com/origin/pgc-image/10eeb291165f45c58ebe5f596e19eca5?from=pc" alt="修图操作更专业的全新人工智能PSElements2021，功能效果秒杀PS"></p>
-<h2 id="给图片智能调色"><a href="#给图片智能调色" class="headerlink" title="给图片智能调色"></a>给图片智能调色</h2><p><img src="https://p1-tt.byteimg.com/origin/pgc-image/17342dc3c5a341fe9c8d68f9846a3087?from=pc" alt="修图操作更专业的全新人工智能PSElements2021，功能效果秒杀PS"></p>
-<h2 id="智能磨皮美颜"><a href="#智能磨皮美颜" class="headerlink" title="智能磨皮美颜"></a>智能磨皮美颜</h2><p><img src="https://p3-tt.byteimg.com/origin/pgc-image/065ec61147544a088bd503746423e9c0?from=pc" alt="修图操作更专业的全新人工智能PSElements2021，功能效果秒杀PS"></p>
-<h2 id="一键添加图片艺术特效"><a href="#一键添加图片艺术特效" class="headerlink" title="一键添加图片艺术特效"></a>一键添加图片艺术特效</h2><p><img src="https://p3-tt.byteimg.com/origin/pgc-image/2bdb9cb58d574b899631fee2b6940064?from=pc" alt="修图操作更专业的全新人工智能PSElements2021，功能效果秒杀PS"></p>
-<h2 id="将照片智能转换成图画"><a href="#将照片智能转换成图画" class="headerlink" title="将照片智能转换成图画"></a>将照片智能转换成图画</h2><p><img src="https://p1-tt.byteimg.com/origin/pgc-image/6e8b18df3965452c8c71cbc9ac08d194?from=pc" alt="修图操作更专业的全新人工智能PSElements2021，功能效果秒杀PS"></p>
-<h2 id="一键添加运动模糊"><a href="#一键添加运动模糊" class="headerlink" title="一键添加运动模糊"></a>一键添加运动模糊</h2><p><img src="https://p1-tt.byteimg.com/origin/pgc-image/d7ae7a4db8c944c8912146d90c3865f5?from=pc" alt="修图操作更专业的全新人工智能PSElements2021，功能效果秒杀PS"></p>
-<h2 id="一键添加背景模糊"><a href="#一键添加背景模糊" class="headerlink" title="一键添加背景模糊"></a>一键添加背景模糊</h2><p><img src="https://p3-tt.byteimg.com/origin/pgc-image/cbbe19777ba34971af30c905a8f69b9b?from=pc" alt="修图操作更专业的全新人工智能PSElements2021，功能效果秒杀PS"></p>
-<h2 id="智能拼接图片："><a href="#智能拼接图片：" class="headerlink" title="智能拼接图片："></a>智能拼接图片：</h2><p><img src="https://p1-tt.byteimg.com/origin/pgc-image/e7b532e2186f460eaa69e21decd7f49a?from=pc" alt="修图操作更专业的全新人工智能PSElements2021，功能效果秒杀PS"></p>
-<h2 id="其他强大的功能效果："><a href="#其他强大的功能效果：" class="headerlink" title="其他强大的功能效果："></a>其他强大的功能效果：</h2><p><img src="https://p1-tt.byteimg.com/origin/pgc-image/a55dbff417de430598c5dc17f5eb769a?from=pc" alt="修图操作更专业的全新人工智能PSElements2021，功能效果秒杀PS"></p>
-<p>当然，PSElements2021不仅可以智能地帮助喜欢摄影修图的小伙伴们设计制作图片。而且，还支持我们自定义修改细节，不得不说确实是一款超级专业的修图黑科技软件。</p>
-]]></content>
-      <categories>
-        <category>应用软件</category>
-      </categories>
-      <tags>
-        <tag>修图</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo、GitHub、Mongodb、Vercel、Twikoo搭建免费博客</title>
     <url>/2021/12/05/Hexo-Github-Mongodb-Vercel-Twikoo/</url>
     <content><![CDATA[<p>很久之前在阿里云撸了几年88元一年的虚拟机，到期后续费太贵了，对于一个不是生产力的网站来说，如果续费就有点飘了，家里又没有矿，没法任性。</p>
@@ -175,24 +202,28 @@
       </tags>
   </entry>
   <entry>
-    <title>解决“索引超出了数组界限”</title>
-    <url>/2021/05/31/Config-Array-Out/</url>
-    <content><![CDATA[<p>今天踩了个坑。周末加班搞了个异构数据同步的中间件工具，本地调试编译好后部署到正式环境，一直提示：</p>
-<blockquote>
-<p>索引超出了数组界限</p>
+    <title>PSElements2021智能修图，超乎想象</title>
+    <url>/2021/05/30/PS-Elements-2021/</url>
+    <content><![CDATA[<blockquote>
+<p>Photoshop Elements功能与Photoshop差不多，同样拥有强大的照片编辑功能，但是Photoshop Elements2021主打的是智能照片处理功能，软件内置的Adobe Sensei AI 驱动技术能够帮助用户快速的对图片进行处理，它能够帮助用户一键式处理图片，图片处理的速度也会比PS更快。</p>
 </blockquote>
-<p>开始根据提示检查源代码里数组看哪个数组超出了个数，但我自己电脑上都是运行正常的，怎么到了其它电脑上就出现这个异常提示？所以肯定不是数组超出个数的原因。</p>
-<p>而且它是第一个数组就提示异常，我就怀疑可能是它读取不到配置文件里的参数导致，最后还真是这么一回事。搜索了很多资料，终于找到一个对头的原因，很简单，错误也很低级。</p>
-<blockquote>
-<p>就是配置文件ini文件首行要留空</p>
-</blockquote>
-<p>我Windows 10首行不留空可以正常读取识别，但服务器Windows Server 2012和2008都不认。</p>
+<h2 id="智能抠图，一键换背景"><a href="#智能抠图，一键换背景" class="headerlink" title="智能抠图，一键换背景"></a>智能抠图，一键换背景</h2><p><img src="https://p3-tt.byteimg.com/origin/pgc-image/ef83b40b96db48739d873ae48d7cfc1b?from=pc" alt="修图操作更专业的全新人工智能PSElements2021，功能效果秒杀PS"></p>
+<h2 id="智能完美移除图片对象"><a href="#智能完美移除图片对象" class="headerlink" title="智能完美移除图片对象"></a>智能完美移除图片对象</h2><p><img src="https://p6-tt.byteimg.com/origin/pgc-image/10eeb291165f45c58ebe5f596e19eca5?from=pc" alt="修图操作更专业的全新人工智能PSElements2021，功能效果秒杀PS"></p>
+<h2 id="给图片智能调色"><a href="#给图片智能调色" class="headerlink" title="给图片智能调色"></a>给图片智能调色</h2><p><img src="https://p1-tt.byteimg.com/origin/pgc-image/17342dc3c5a341fe9c8d68f9846a3087?from=pc" alt="修图操作更专业的全新人工智能PSElements2021，功能效果秒杀PS"></p>
+<h2 id="智能磨皮美颜"><a href="#智能磨皮美颜" class="headerlink" title="智能磨皮美颜"></a>智能磨皮美颜</h2><p><img src="https://p3-tt.byteimg.com/origin/pgc-image/065ec61147544a088bd503746423e9c0?from=pc" alt="修图操作更专业的全新人工智能PSElements2021，功能效果秒杀PS"></p>
+<h2 id="一键添加图片艺术特效"><a href="#一键添加图片艺术特效" class="headerlink" title="一键添加图片艺术特效"></a>一键添加图片艺术特效</h2><p><img src="https://p3-tt.byteimg.com/origin/pgc-image/2bdb9cb58d574b899631fee2b6940064?from=pc" alt="修图操作更专业的全新人工智能PSElements2021，功能效果秒杀PS"></p>
+<h2 id="将照片智能转换成图画"><a href="#将照片智能转换成图画" class="headerlink" title="将照片智能转换成图画"></a>将照片智能转换成图画</h2><p><img src="https://p1-tt.byteimg.com/origin/pgc-image/6e8b18df3965452c8c71cbc9ac08d194?from=pc" alt="修图操作更专业的全新人工智能PSElements2021，功能效果秒杀PS"></p>
+<h2 id="一键添加运动模糊"><a href="#一键添加运动模糊" class="headerlink" title="一键添加运动模糊"></a>一键添加运动模糊</h2><p><img src="https://p1-tt.byteimg.com/origin/pgc-image/d7ae7a4db8c944c8912146d90c3865f5?from=pc" alt="修图操作更专业的全新人工智能PSElements2021，功能效果秒杀PS"></p>
+<h2 id="一键添加背景模糊"><a href="#一键添加背景模糊" class="headerlink" title="一键添加背景模糊"></a>一键添加背景模糊</h2><p><img src="https://p3-tt.byteimg.com/origin/pgc-image/cbbe19777ba34971af30c905a8f69b9b?from=pc" alt="修图操作更专业的全新人工智能PSElements2021，功能效果秒杀PS"></p>
+<h2 id="智能拼接图片："><a href="#智能拼接图片：" class="headerlink" title="智能拼接图片："></a>智能拼接图片：</h2><p><img src="https://p1-tt.byteimg.com/origin/pgc-image/e7b532e2186f460eaa69e21decd7f49a?from=pc" alt="修图操作更专业的全新人工智能PSElements2021，功能效果秒杀PS"></p>
+<h2 id="其他强大的功能效果："><a href="#其他强大的功能效果：" class="headerlink" title="其他强大的功能效果："></a>其他强大的功能效果：</h2><p><img src="https://p1-tt.byteimg.com/origin/pgc-image/a55dbff417de430598c5dc17f5eb769a?from=pc" alt="修图操作更专业的全新人工智能PSElements2021，功能效果秒杀PS"></p>
+<p>当然，PSElements2021不仅可以智能地帮助喜欢摄影修图的小伙伴们设计制作图片。而且，还支持我们自定义修改细节，不得不说确实是一款超级专业的修图黑科技软件。</p>
 ]]></content>
       <categories>
-        <category>笔记</category>
+        <category>应用软件</category>
       </categories>
       <tags>
-        <tag>中间件</tag>
+        <tag>修图</tag>
       </tags>
   </entry>
   <entry>
@@ -291,6 +322,34 @@
       </tags>
   </entry>
   <entry>
+    <title>绿色版Tomcat8.5开机启动服务配置方法</title>
+    <url>/2021/05/21/hello-world/</url>
+    <content><![CDATA[<p>主要就是添加系统环境变量和注册到服务管理。</p>
+<h2 id="添加系统环境变量Path值"><a href="#添加系统环境变量Path值" class="headerlink" title="添加系统环境变量Path值"></a>添加系统环境变量Path值</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">;D:\apache-tomcat-8.5.53\bin</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="CMD进入bin目录安装服务"><a href="#CMD进入bin目录安装服务" class="headerlink" title="CMD进入bin目录安装服务"></a>CMD进入bin目录安装服务</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd d:</span><br><span class="line">D:\&gt;cd D:\apache-tomcat-8.5.53\bin</span><br><span class="line">D:\apache-tomcat-8.5.53\bin&gt;service.bat install</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="安装成功提示"><a href="#安装成功提示" class="headerlink" title="安装成功提示"></a>安装成功提示</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Installing the service &#x27;Tomcat8&#x27; ...</span><br><span class="line">Using CATALINA_HOME:    &quot;D:\apache-tomcat-8.5.53&quot;</span><br><span class="line">Using CATALINA_BASE:    &quot;D:\apache-tomcat-8.5.53&quot;</span><br><span class="line">Using JAVA_HOME:        &quot;D:\Java\jdk1.8.0_221&quot;</span><br><span class="line">Using JRE_HOME:         &quot;D:\Java\jdk1.8.0_221\jre&quot;</span><br><span class="line">Using JVM:              &quot;D:\Java\jdk1.8.0_221\jre\bin\server\jvm.dll&quot;</span><br><span class="line">The service &#x27;Tomcat8&#x27; has been installed.</span><br></pre></td></tr></table></figure>
+
+<h2 id="启动Tomcat"><a href="#启动Tomcat" class="headerlink" title="启动Tomcat"></a>启动Tomcat</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">D:\apache-tomcat-8.5.53\bin&gt;net start Tomcat8</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="配置开机启动"><a href="#配置开机启动" class="headerlink" title="配置开机启动"></a>配置开机启动</h2><p>进入系统服务管理找到Tomcat8属性设置自启动，或者通过bin目录下的tomcat8w.exe设置自动启动。</p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>Tomcat</tag>
+        <tag>绿色版</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo deploy到GitHub出现Error Spawn failed的解决方法</title>
     <url>/2021/12/08/hexo-git-deploy-Spawn-failed/</url>
     <content><![CDATA[<p>最近部署的时候经常出现Error: Spawn failed，怎么都部署不成功。后来折腾了一轮终于找到解决方法。</p>
@@ -336,34 +395,6 @@
       </tags>
   </entry>
   <entry>
-    <title>绿色版Tomcat8.5开机启动服务配置方法</title>
-    <url>/2021/05/21/hello-world/</url>
-    <content><![CDATA[<p>主要就是添加系统环境变量和注册到服务管理。</p>
-<h2 id="添加系统环境变量Path值"><a href="#添加系统环境变量Path值" class="headerlink" title="添加系统环境变量Path值"></a>添加系统环境变量Path值</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">;D:\apache-tomcat-8.5.53\bin</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="CMD进入bin目录安装服务"><a href="#CMD进入bin目录安装服务" class="headerlink" title="CMD进入bin目录安装服务"></a>CMD进入bin目录安装服务</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd d:</span><br><span class="line">D:\&gt;cd D:\apache-tomcat-8.5.53\bin</span><br><span class="line">D:\apache-tomcat-8.5.53\bin&gt;service.bat install</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="安装成功提示"><a href="#安装成功提示" class="headerlink" title="安装成功提示"></a>安装成功提示</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Installing the service &#x27;Tomcat8&#x27; ...</span><br><span class="line">Using CATALINA_HOME:    &quot;D:\apache-tomcat-8.5.53&quot;</span><br><span class="line">Using CATALINA_BASE:    &quot;D:\apache-tomcat-8.5.53&quot;</span><br><span class="line">Using JAVA_HOME:        &quot;D:\Java\jdk1.8.0_221&quot;</span><br><span class="line">Using JRE_HOME:         &quot;D:\Java\jdk1.8.0_221\jre&quot;</span><br><span class="line">Using JVM:              &quot;D:\Java\jdk1.8.0_221\jre\bin\server\jvm.dll&quot;</span><br><span class="line">The service &#x27;Tomcat8&#x27; has been installed.</span><br></pre></td></tr></table></figure>
-
-<h2 id="启动Tomcat"><a href="#启动Tomcat" class="headerlink" title="启动Tomcat"></a>启动Tomcat</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">D:\apache-tomcat-8.5.53\bin&gt;net start Tomcat8</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="配置开机启动"><a href="#配置开机启动" class="headerlink" title="配置开机启动"></a>配置开机启动</h2><p>进入系统服务管理找到Tomcat8属性设置自启动，或者通过bin目录下的tomcat8w.exe设置自动启动。</p>
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>Tomcat</tag>
-        <tag>绿色版</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Windows下JDK8.0（JDK1.8）环境变量配置</title>
     <url>/2021/11/23/jdk-1-8-ec/</url>
     <content><![CDATA[<p>经常要在Windows Server安装配置JDK，目前只能用1.8，做个笔记。</p>
@@ -386,34 +417,87 @@
       </tags>
   </entry>
   <entry>
-    <title>通过手机快速扫描纸质相片或图文转换为数码图片</title>
-    <url>/2021/05/24/photo-scan/</url>
-    <content><![CDATA[<blockquote>
-<p>翻阅老照片也是一种温馨的享受！这些有着年代的每一张纸照片都有着一个属于它的故事，然而，如今这些照片已经慢慢发黄发旧，保存和翻看都不方便，甚至收着收着就找不到了，是很遗憾的事情！</p>
-</blockquote>
-<p>不过，现在你不用再担心，也无需花钱购买扫描仪，你只需要用你的手机就能把你这些最心爱的冲印照片快速转换为数码相片保存到手机上（之后就可以随便转移到其它存储设备上）。</p>
-<p><img src="https://p1-tt.byteimg.com/origin/6c3b0004f8519629eaec?from=pc" alt="如何使用手机快速扫描纸质相片转换为数码相片"></p>
-<p>其实之前也用过其它一些将老照片扫描变成数码电子档储存的 App（或者你会说没那么麻烦，直接手机拍照就行了），但总的来说要么偏色严重要么相纸表面眩光，完全丢失了老照片原有的色彩和“味道”。</p>
-<p>然而，在此推荐的谷歌的这款「照片扫描仪PhotoScan」则十分神奇，绝对称得上神器！它有着谷歌图片智能识别算法技术加持， 不仅速度快，而且就像是把老照片原封不动的放到手机里一样。</p>
-<p><img src="https://p1-tt.byteimg.com/origin/6c3b0004f89fa42ce496?from=pc" alt="如何使用手机快速扫描纸质相片转换为数码相片"></p>
-<p>「PhotoScan」操作简单，只需要通过智能手机简单的几步就能快速完成。打开应用后进行拍摄，然后再用画面中提示的四个圆点逐个对准，接着它就会通谷歌图片智能识别算法把多张照片进行合成，从而避免眩光和偏色的问题。</p>
-<p><img src="https://p6-tt.byteimg.com/origin/6c3b0004f9023b338661?from=pc" alt="如何使用手机快速扫描纸质相片转换为数码相片"></p>
-<p>同时这样扫描出来的照片还能自动完成边缘校正，避免因为扫描角度的问题造成的成像扭曲，而且也会自动裁剪出一张边缘齐整的数码老照片。如果拍摄的不够准，还可以手动调整边角，调准时还有放大显示便于我们能快速的调整好！</p>
-<p><img src="https://p6-tt.byteimg.com/origin/6ed20002337a72888a3f?from=pc" alt="如何使用手机快速扫描纸质相片转换为数码相片"></p>
-<p>谷歌的这种防眩光和多张算法修图的方式甚至连电脑和手机屏幕上的图片都能完成扫描，避免眩光。还有那些放在相簿里或过塑过的照片，都不需把它们拿出来，直接就能进行扫描。</p>
-<p><img src="https://p3-tt.byteimg.com/origin/6c3f00036709fd610769?from=pc" alt="如何使用手机快速扫描纸质相片转换为数码相片"></p>
-<p>个人认为这款「PhotoScan」的使用效果一定是目前所有同类照片扫描工具中最好的！如果你也有一堆老照片需要妥善保管，又想随时能找出来看看的话，谷歌这款充满人文关怀的手机App一定是你的最佳选择，没有之一。</p>
-<blockquote>
-<p>链接: <a href="https://pan.baidu.com/s/1HMBoyHgguVsphU5CiTBNaQ">https://pan.baidu.com/s/1HMBoyHgguVsphU5CiTBNaQ</a> 提取码: 2uu4 </p>
-</blockquote>
+    <title>小米Air 13&#39;3 OC引导安装黑苹果macOS Big Sur</title>
+    <url>/2021/06/25/macOS-Big-Sur/</url>
+    <content><![CDATA[<p>上周末，一兄弟打电话来问我会不会安装黑苹果。我跟他说几年前在虚拟机上安装过，没有在PC机或笔记本上安装过。我本意是——大几率不会安装。没想到他直接说，“那就好，我马上拿个笔记本过去你那帮安装一个！”。</p>
+<p>最后拿了一个吃了几年灰的小米Air 13’3笔记本过来，折腾了整整一天，才把黑苹果给它安装上。</p>
+<p><img src="https://p6-tt.byteimg.com/origin/pgc-image/d6f84f9759b6435dbcadf2585ac681b6?from=pc" alt="小米Air 13&#39;3 OC引导安装黑苹果macOS Big Sur"></p>
+<p>其实安装过程并不难，主要是爬资料花了很长的时间。而且黑苹果难的并不是安装，而是安装完成后是否能让各硬件吃上合适的驱动，让它们顺利上岗。</p>
+<p><img src="https://p1-tt.byteimg.com/origin/pgc-image/6112e4ef57ac484cb56162cb5a97980e?from=pc" alt="小米Air 13&#39;3 OC引导安装黑苹果macOS Big Sur"></p>
+<p><strong>大概流程就是：</strong></p>
+<ol>
+<li>确认安装电脑主机或笔记本硬件配置，特别是CPU和独显型号（小米Air13’3没法将老N卡驱动起来，唯一的不完美）；</li>
+<li>准备两个U盘：一个4G就够，一个16G以上；</li>
+<li>搜索下载相应的镜像，我下载的是macOS Big Sur 11.4；</li>
+<li>下载相应的镜像U盘制作工具；</li>
+<li>最后制作镜像U盘安装；</li>
+<li>解决驱动问题。</li>
+</ol>
+<p><strong>安装所需要用到的软件工具：</strong></p>
+<ul>
+<li>balenaEtcher（将macOS Big Sur 11.4镜像写入U盘）</li>
+<li>Windows PE制作工具（包含硬盘分区工具）</li>
+<li>OpenCore</li>
+</ul>
+<h1 id="一、搜索下载macOS-Big-Sur-11-4镜像"><a href="#一、搜索下载macOS-Big-Sur-11-4镜像" class="headerlink" title="一、搜索下载macOS Big Sur 11.4镜像"></a>一、搜索下载macOS Big Sur 11.4镜像</h1><p>一搜一堆大佬制作的镜像文件，但各种收费限制很难下载下来，如果你懒得搜索，可以关注文末<strong>公众号发送【bigsur】获取</strong>。我所下载的镜像保存在天翼云盘，下载速度杠杠的，13G左右大小，下载大概1个多小时就搞定了。</p>
+<p><img src="https://p1-tt.byteimg.com/origin/pgc-image/7be4d4c51930457182fe6ae09765cfde?from=pc" alt="小米Air 13&#39;3 OC引导安装黑苹果macOS Big Sur"></p>
+<p>一开始时是百度网盘的下载链接，但那速度，真的是急死人，最终才找到的天翼云盘链接，可惜的是天翼云盘的免费空间只有15G，现在这个镜像占用着我空间13G，我打算留一个月后删除，不过会保存一份到阿里云盘，静等阿里云盘分享功能上线。</p>
+<h1 id="二、制作镜像U盘"><a href="#二、制作镜像U盘" class="headerlink" title="二、制作镜像U盘"></a>二、制作镜像U盘</h1><p>在等待下载macOS Big Sur完成的过程中，可以先下载制作一个PE启动U盘。至于用哪个工具，自行搜索（例如：一键工作室、老毛桃之类的），丰衣足食。</p>
+<p>再下载balenaEtcher镜像写入U盘工具，操作很简单，也很稳：<strong>选择镜像文件——选择U盘——等待完成</strong>。写入耗时和你的U盘读写速度有关，我的大概用了20分钟。</p>
+<p><img src="https://p1-tt.byteimg.com/origin/pgc-image/7a162cb2bb4c4e9aa2a4b725b880d8a1?from=pc" alt="小米Air 13&#39;3 OC引导安装黑苹果macOS Big Sur"></p>
+<h1 id="三、安装镜像"><a href="#三、安装镜像" class="headerlink" title="三、安装镜像"></a>三、安装镜像</h1><p>具体步骤就不多说了，搜索一大堆，主要就是先要设置笔记本或PC机的BIOS为EFI启动模式，否则不识别启动U盘。</p>
+<p>而需要注意的是此macOS Big Sur镜像并非只能安装在小米的笔记本上，很多都能，主要是看CPU架构（<strong>根据自己CPU型号查询架构</strong>），根据不同的CPU架构选择不同的EFI引导文件。</p>
+<p><img src="https://p1-tt.byteimg.com/origin/pgc-image/e944231305f14e1d987670f4418bc393?from=pc" alt="小米Air 13&#39;3 OC引导安装黑苹果macOS Big Sur"></p>
+<p>使用Windows PE进入，再把已写入macOS Big Sur镜像的U盘接上，在EFI/OC文件夹路径下，找到config_XXX.plist，XXX代表你CPU的架构（这个镜像里包含了当前主流CPU架构config.plist配置），把对应你CPU架构的那个修改为config.plist，原来的那个重命名为其它。</p>
+<p>然后就开始用macOS Big Sur镜像U盘开始安装。<strong>需要注意硬盘数据，建议有重要数据一定要先备份到其它硬盘上</strong>。不管你是单独安装macOS Big Sur还是分区或分不同硬盘同时安装Windows双系统，都要备份，以免安装过程中手误抹掉了硬盘分区就悲剧了。</p>
+<p>安装完成后，再用Windows PE U盘启动，进入PE系统后，再接上macOS Big Sur镜像U盘，把里面的EFI文件夹复制到macOS Big Sur安装的硬盘EFI引导分区（我将CLOVER引导直接删除，朋友只需要一个OC引导，全盘单macOS）。</p>
+<p>取出U盘，重新启动从硬盘启动系统，有可能安装过程中不识别笔记本自带的键盘，那就要准备一个USB键盘连接输入设置系统参数。</p>
+<h1 id="四、驱动安装"><a href="#四、驱动安装" class="headerlink" title="四、驱动安装"></a>四、驱动安装</h1><p>安装完成后，小米Air 13’3以下几个硬件驱动不了：</p>
+<ul>
+<li>原生键盘不识别；</li>
+<li>原生声卡不识别；</li>
+<li>原生无线网卡不识别；</li>
+<li>芯片集显只识别7MB（卡顿）；</li>
+<li>电池管理不识别。</li>
+</ul>
+<p>我是在我笔记本上（Windows）先下载了键盘驱动、电池管理驱动和无线网卡的驱动以及软件。</p>
+<ul>
+<li>VoodooPS2Controller.kext（键盘）</li>
+<li>SMCBatteryManager.kext（电池管理）</li>
+<li>AirportItlwm.kext，itlwm.kext和HeliPort.app（解决原生无线网卡连接WiFi）</li>
+</ul>
+<p>在macOS Big Sur中通过OpenCore挂载EFI分区，把.kext驱动文件拷贝到EFI分区的EFI\OC\Kexts文件夹下。然后使用OpenCore打开EFI\OC\config.plist文件，在【Kernel-内核设置】项选择【快照添加】（0.6版本是【浏览添加】），把驱动文件夹添加上，然后勾选上相应的驱动启用，保存。</p>
+<p><img src="https://p3-tt.byteimg.com/origin/pgc-image/4b695fce14564d4c8cada4bb17ef0208?from=pc" alt="小米Air 13&#39;3 OC引导安装黑苹果macOS Big Sur"></p>
+<p>顺便把AppleALC.kext、Lilu.kext和WhateverGreen.kext也勾上启用，实际上这个镜像已经集成了声卡、显卡的驱动，只是没有启用。</p>
+<p><img src="https://p1-tt.byteimg.com/origin/pgc-image/7aedd966ffcc4c288a2aa28033c997ed?from=pc" alt="小米Air 13&#39;3 OC引导安装黑苹果macOS Big Sur"></p>
+<p>接着安装HeliPort.app，安装好后，把它添加到自启动项，具体操作搜索mac添加自动项。</p>
+<p>重启系统，键盘、电池和WiFi就能识别了，可以把USB键盘撤掉，连上你的WiFi。</p>
+<p>但是到目前为止，还是没有声音的，显卡也还是识别为7MB集显，还需继续折腾。</p>
+<p>根据CPU架构找出CPU平台ig-platform-id号，具体自行关键词搜索，我朋友这台小米Air 13’3的是酷睿i5 6代，ig-platform-id号为00001619.。</p>
+<p><img src="https://p6-tt.byteimg.com/origin/pgc-image/3ba466f29f134cc29a6761b85c328886?from=pc" alt="小米Air 13&#39;3 OC引导安装黑苹果macOS Big Sur"></p>
+<p>再用OpenCore挂载EFI分区，打开config.plist文件设置【DeviceProperties-设备属性设置】项，分别设置显卡和声卡设备。上图的的是显卡设备参数配置，配置好ig-platform-id，还有就是model属性值，为集成芯片显卡型号，小米Air 13’3的酷睿i5第六代为Intel HD Graphics 520。</p>
+<p>最后是声卡设备参数配置，需要根据声卡型号查找它的layout-id，只能是模拟声卡。layout-id这个数值可能有多个，选其中一个就可以了，小米Air 13’3我填了它其中100这个能正确搞定。</p>
+<p><img src="https://p6-tt.byteimg.com/origin/pgc-image/3fb37e8e96e94a72903c5cf9769fde2b?from=pc" alt="小米Air 13&#39;3 OC引导安装黑苹果macOS Big Sur"></p>
+<p>最后，重启大功告成。</p>
+<h1 id="使用感受"><a href="#使用感受" class="headerlink" title="使用感受"></a>使用感受</h1><p>操作不太习惯，鼠标滚轮和窗口按钮都是和Windows反过来的，习惯了Windows的话，操作起来很别扭，估计mac转Windows的人也和相应的有这种感觉。</p>
+<p><strong>不完美的地方：</strong></p>
+<ul>
+<li>电池耗电比较快；</li>
+<li>发热严重；</li>
+<li>关机无法切断电源（需关机后长按电源键切断电源）</li>
+</ul>
+<p>最吐血的是折腾完之后，接到朋友电话说，Windows 11准备出来了，界面和苹果一样美，而且操作起来要比苹果溜，等它发布后重新再给安装Windows 11。</p>
+<p><img src="https://p3-tt.byteimg.com/origin/pgc-image/741d0c3ad71b4218acd228c9e6be51c7?from=pc" alt="小米Air 13&#39;3 OC引导安装黑苹果macOS Big Sur"></p>
+<p>如果你的笔记本是小米Air 13’3，也想安装macOS Big Sur试试，又懒得折腾驱动，可以使用我配置好的EFI，<strong>关注以下公众号发送【bigsur】获取</strong>，但不保证一定能用。</p>
+<p><img src="https://shan-ren.oss-cn-beijing.aliyuncs.com/imgs/wxdcyj-6.png" alt="小米Air 13&#39;3 OC引导安装黑苹果macOS Big Sur"></p>
 ]]></content>
       <categories>
-        <category>应用软件</category>
+        <category>笔记</category>
       </categories>
       <tags>
-        <tag>App</tag>
-        <tag>图片处理</tag>
-        <tag>扫描</tag>
+        <tag>macOS</tag>
+        <tag>黑苹果</tag>
+        <tag>小米笔记本</tag>
       </tags>
   </entry>
   <entry>
@@ -594,87 +678,34 @@
       </tags>
   </entry>
   <entry>
-    <title>小米Air 13&#39;3 OC引导安装黑苹果macOS Big Sur</title>
-    <url>/2021/06/25/macOS-Big-Sur/</url>
-    <content><![CDATA[<p>上周末，一兄弟打电话来问我会不会安装黑苹果。我跟他说几年前在虚拟机上安装过，没有在PC机或笔记本上安装过。我本意是——大几率不会安装。没想到他直接说，“那就好，我马上拿个笔记本过去你那帮安装一个！”。</p>
-<p>最后拿了一个吃了几年灰的小米Air 13’3笔记本过来，折腾了整整一天，才把黑苹果给它安装上。</p>
-<p><img src="https://p6-tt.byteimg.com/origin/pgc-image/d6f84f9759b6435dbcadf2585ac681b6?from=pc" alt="小米Air 13&#39;3 OC引导安装黑苹果macOS Big Sur"></p>
-<p>其实安装过程并不难，主要是爬资料花了很长的时间。而且黑苹果难的并不是安装，而是安装完成后是否能让各硬件吃上合适的驱动，让它们顺利上岗。</p>
-<p><img src="https://p1-tt.byteimg.com/origin/pgc-image/6112e4ef57ac484cb56162cb5a97980e?from=pc" alt="小米Air 13&#39;3 OC引导安装黑苹果macOS Big Sur"></p>
-<p><strong>大概流程就是：</strong></p>
-<ol>
-<li>确认安装电脑主机或笔记本硬件配置，特别是CPU和独显型号（小米Air13’3没法将老N卡驱动起来，唯一的不完美）；</li>
-<li>准备两个U盘：一个4G就够，一个16G以上；</li>
-<li>搜索下载相应的镜像，我下载的是macOS Big Sur 11.4；</li>
-<li>下载相应的镜像U盘制作工具；</li>
-<li>最后制作镜像U盘安装；</li>
-<li>解决驱动问题。</li>
-</ol>
-<p><strong>安装所需要用到的软件工具：</strong></p>
-<ul>
-<li>balenaEtcher（将macOS Big Sur 11.4镜像写入U盘）</li>
-<li>Windows PE制作工具（包含硬盘分区工具）</li>
-<li>OpenCore</li>
-</ul>
-<h1 id="一、搜索下载macOS-Big-Sur-11-4镜像"><a href="#一、搜索下载macOS-Big-Sur-11-4镜像" class="headerlink" title="一、搜索下载macOS Big Sur 11.4镜像"></a>一、搜索下载macOS Big Sur 11.4镜像</h1><p>一搜一堆大佬制作的镜像文件，但各种收费限制很难下载下来，如果你懒得搜索，可以关注文末<strong>公众号发送【bigsur】获取</strong>。我所下载的镜像保存在天翼云盘，下载速度杠杠的，13G左右大小，下载大概1个多小时就搞定了。</p>
-<p><img src="https://p1-tt.byteimg.com/origin/pgc-image/7be4d4c51930457182fe6ae09765cfde?from=pc" alt="小米Air 13&#39;3 OC引导安装黑苹果macOS Big Sur"></p>
-<p>一开始时是百度网盘的下载链接，但那速度，真的是急死人，最终才找到的天翼云盘链接，可惜的是天翼云盘的免费空间只有15G，现在这个镜像占用着我空间13G，我打算留一个月后删除，不过会保存一份到阿里云盘，静等阿里云盘分享功能上线。</p>
-<h1 id="二、制作镜像U盘"><a href="#二、制作镜像U盘" class="headerlink" title="二、制作镜像U盘"></a>二、制作镜像U盘</h1><p>在等待下载macOS Big Sur完成的过程中，可以先下载制作一个PE启动U盘。至于用哪个工具，自行搜索（例如：一键工作室、老毛桃之类的），丰衣足食。</p>
-<p>再下载balenaEtcher镜像写入U盘工具，操作很简单，也很稳：<strong>选择镜像文件——选择U盘——等待完成</strong>。写入耗时和你的U盘读写速度有关，我的大概用了20分钟。</p>
-<p><img src="https://p1-tt.byteimg.com/origin/pgc-image/7a162cb2bb4c4e9aa2a4b725b880d8a1?from=pc" alt="小米Air 13&#39;3 OC引导安装黑苹果macOS Big Sur"></p>
-<h1 id="三、安装镜像"><a href="#三、安装镜像" class="headerlink" title="三、安装镜像"></a>三、安装镜像</h1><p>具体步骤就不多说了，搜索一大堆，主要就是先要设置笔记本或PC机的BIOS为EFI启动模式，否则不识别启动U盘。</p>
-<p>而需要注意的是此macOS Big Sur镜像并非只能安装在小米的笔记本上，很多都能，主要是看CPU架构（<strong>根据自己CPU型号查询架构</strong>），根据不同的CPU架构选择不同的EFI引导文件。</p>
-<p><img src="https://p1-tt.byteimg.com/origin/pgc-image/e944231305f14e1d987670f4418bc393?from=pc" alt="小米Air 13&#39;3 OC引导安装黑苹果macOS Big Sur"></p>
-<p>使用Windows PE进入，再把已写入macOS Big Sur镜像的U盘接上，在EFI/OC文件夹路径下，找到config_XXX.plist，XXX代表你CPU的架构（这个镜像里包含了当前主流CPU架构config.plist配置），把对应你CPU架构的那个修改为config.plist，原来的那个重命名为其它。</p>
-<p>然后就开始用macOS Big Sur镜像U盘开始安装。<strong>需要注意硬盘数据，建议有重要数据一定要先备份到其它硬盘上</strong>。不管你是单独安装macOS Big Sur还是分区或分不同硬盘同时安装Windows双系统，都要备份，以免安装过程中手误抹掉了硬盘分区就悲剧了。</p>
-<p>安装完成后，再用Windows PE U盘启动，进入PE系统后，再接上macOS Big Sur镜像U盘，把里面的EFI文件夹复制到macOS Big Sur安装的硬盘EFI引导分区（我将CLOVER引导直接删除，朋友只需要一个OC引导，全盘单macOS）。</p>
-<p>取出U盘，重新启动从硬盘启动系统，有可能安装过程中不识别笔记本自带的键盘，那就要准备一个USB键盘连接输入设置系统参数。</p>
-<h1 id="四、驱动安装"><a href="#四、驱动安装" class="headerlink" title="四、驱动安装"></a>四、驱动安装</h1><p>安装完成后，小米Air 13’3以下几个硬件驱动不了：</p>
-<ul>
-<li>原生键盘不识别；</li>
-<li>原生声卡不识别；</li>
-<li>原生无线网卡不识别；</li>
-<li>芯片集显只识别7MB（卡顿）；</li>
-<li>电池管理不识别。</li>
-</ul>
-<p>我是在我笔记本上（Windows）先下载了键盘驱动、电池管理驱动和无线网卡的驱动以及软件。</p>
-<ul>
-<li>VoodooPS2Controller.kext（键盘）</li>
-<li>SMCBatteryManager.kext（电池管理）</li>
-<li>AirportItlwm.kext，itlwm.kext和HeliPort.app（解决原生无线网卡连接WiFi）</li>
-</ul>
-<p>在macOS Big Sur中通过OpenCore挂载EFI分区，把.kext驱动文件拷贝到EFI分区的EFI\OC\Kexts文件夹下。然后使用OpenCore打开EFI\OC\config.plist文件，在【Kernel-内核设置】项选择【快照添加】（0.6版本是【浏览添加】），把驱动文件夹添加上，然后勾选上相应的驱动启用，保存。</p>
-<p><img src="https://p3-tt.byteimg.com/origin/pgc-image/4b695fce14564d4c8cada4bb17ef0208?from=pc" alt="小米Air 13&#39;3 OC引导安装黑苹果macOS Big Sur"></p>
-<p>顺便把AppleALC.kext、Lilu.kext和WhateverGreen.kext也勾上启用，实际上这个镜像已经集成了声卡、显卡的驱动，只是没有启用。</p>
-<p><img src="https://p1-tt.byteimg.com/origin/pgc-image/7aedd966ffcc4c288a2aa28033c997ed?from=pc" alt="小米Air 13&#39;3 OC引导安装黑苹果macOS Big Sur"></p>
-<p>接着安装HeliPort.app，安装好后，把它添加到自启动项，具体操作搜索mac添加自动项。</p>
-<p>重启系统，键盘、电池和WiFi就能识别了，可以把USB键盘撤掉，连上你的WiFi。</p>
-<p>但是到目前为止，还是没有声音的，显卡也还是识别为7MB集显，还需继续折腾。</p>
-<p>根据CPU架构找出CPU平台ig-platform-id号，具体自行关键词搜索，我朋友这台小米Air 13’3的是酷睿i5 6代，ig-platform-id号为00001619.。</p>
-<p><img src="https://p6-tt.byteimg.com/origin/pgc-image/3ba466f29f134cc29a6761b85c328886?from=pc" alt="小米Air 13&#39;3 OC引导安装黑苹果macOS Big Sur"></p>
-<p>再用OpenCore挂载EFI分区，打开config.plist文件设置【DeviceProperties-设备属性设置】项，分别设置显卡和声卡设备。上图的的是显卡设备参数配置，配置好ig-platform-id，还有就是model属性值，为集成芯片显卡型号，小米Air 13’3的酷睿i5第六代为Intel HD Graphics 520。</p>
-<p>最后是声卡设备参数配置，需要根据声卡型号查找它的layout-id，只能是模拟声卡。layout-id这个数值可能有多个，选其中一个就可以了，小米Air 13’3我填了它其中100这个能正确搞定。</p>
-<p><img src="https://p6-tt.byteimg.com/origin/pgc-image/3fb37e8e96e94a72903c5cf9769fde2b?from=pc" alt="小米Air 13&#39;3 OC引导安装黑苹果macOS Big Sur"></p>
-<p>最后，重启大功告成。</p>
-<h1 id="使用感受"><a href="#使用感受" class="headerlink" title="使用感受"></a>使用感受</h1><p>操作不太习惯，鼠标滚轮和窗口按钮都是和Windows反过来的，习惯了Windows的话，操作起来很别扭，估计mac转Windows的人也和相应的有这种感觉。</p>
-<p><strong>不完美的地方：</strong></p>
-<ul>
-<li>电池耗电比较快；</li>
-<li>发热严重；</li>
-<li>关机无法切断电源（需关机后长按电源键切断电源）</li>
-</ul>
-<p>最吐血的是折腾完之后，接到朋友电话说，Windows 11准备出来了，界面和苹果一样美，而且操作起来要比苹果溜，等它发布后重新再给安装Windows 11。</p>
-<p><img src="https://p3-tt.byteimg.com/origin/pgc-image/741d0c3ad71b4218acd228c9e6be51c7?from=pc" alt="小米Air 13&#39;3 OC引导安装黑苹果macOS Big Sur"></p>
-<p>如果你的笔记本是小米Air 13’3，也想安装macOS Big Sur试试，又懒得折腾驱动，可以使用我配置好的EFI，<strong>关注以下公众号发送【bigsur】获取</strong>，但不保证一定能用。</p>
-<p><img src="https://shan-ren.oss-cn-beijing.aliyuncs.com/imgs/wxdcyj-6.png" alt="小米Air 13&#39;3 OC引导安装黑苹果macOS Big Sur"></p>
+    <title>通过手机快速扫描纸质相片或图文转换为数码图片</title>
+    <url>/2021/05/24/photo-scan/</url>
+    <content><![CDATA[<blockquote>
+<p>翻阅老照片也是一种温馨的享受！这些有着年代的每一张纸照片都有着一个属于它的故事，然而，如今这些照片已经慢慢发黄发旧，保存和翻看都不方便，甚至收着收着就找不到了，是很遗憾的事情！</p>
+</blockquote>
+<p>不过，现在你不用再担心，也无需花钱购买扫描仪，你只需要用你的手机就能把你这些最心爱的冲印照片快速转换为数码相片保存到手机上（之后就可以随便转移到其它存储设备上）。</p>
+<p><img src="https://p1-tt.byteimg.com/origin/6c3b0004f8519629eaec?from=pc" alt="如何使用手机快速扫描纸质相片转换为数码相片"></p>
+<p>其实之前也用过其它一些将老照片扫描变成数码电子档储存的 App（或者你会说没那么麻烦，直接手机拍照就行了），但总的来说要么偏色严重要么相纸表面眩光，完全丢失了老照片原有的色彩和“味道”。</p>
+<p>然而，在此推荐的谷歌的这款「照片扫描仪PhotoScan」则十分神奇，绝对称得上神器！它有着谷歌图片智能识别算法技术加持， 不仅速度快，而且就像是把老照片原封不动的放到手机里一样。</p>
+<p><img src="https://p1-tt.byteimg.com/origin/6c3b0004f89fa42ce496?from=pc" alt="如何使用手机快速扫描纸质相片转换为数码相片"></p>
+<p>「PhotoScan」操作简单，只需要通过智能手机简单的几步就能快速完成。打开应用后进行拍摄，然后再用画面中提示的四个圆点逐个对准，接着它就会通谷歌图片智能识别算法把多张照片进行合成，从而避免眩光和偏色的问题。</p>
+<p><img src="https://p6-tt.byteimg.com/origin/6c3b0004f9023b338661?from=pc" alt="如何使用手机快速扫描纸质相片转换为数码相片"></p>
+<p>同时这样扫描出来的照片还能自动完成边缘校正，避免因为扫描角度的问题造成的成像扭曲，而且也会自动裁剪出一张边缘齐整的数码老照片。如果拍摄的不够准，还可以手动调整边角，调准时还有放大显示便于我们能快速的调整好！</p>
+<p><img src="https://p6-tt.byteimg.com/origin/6ed20002337a72888a3f?from=pc" alt="如何使用手机快速扫描纸质相片转换为数码相片"></p>
+<p>谷歌的这种防眩光和多张算法修图的方式甚至连电脑和手机屏幕上的图片都能完成扫描，避免眩光。还有那些放在相簿里或过塑过的照片，都不需把它们拿出来，直接就能进行扫描。</p>
+<p><img src="https://p3-tt.byteimg.com/origin/6c3f00036709fd610769?from=pc" alt="如何使用手机快速扫描纸质相片转换为数码相片"></p>
+<p>个人认为这款「PhotoScan」的使用效果一定是目前所有同类照片扫描工具中最好的！如果你也有一堆老照片需要妥善保管，又想随时能找出来看看的话，谷歌这款充满人文关怀的手机App一定是你的最佳选择，没有之一。</p>
+<blockquote>
+<p>链接: <a href="https://pan.baidu.com/s/1HMBoyHgguVsphU5CiTBNaQ">https://pan.baidu.com/s/1HMBoyHgguVsphU5CiTBNaQ</a> 提取码: 2uu4 </p>
+</blockquote>
 ]]></content>
       <categories>
-        <category>笔记</category>
+        <category>应用软件</category>
       </categories>
       <tags>
-        <tag>macOS</tag>
-        <tag>黑苹果</tag>
-        <tag>小米笔记本</tag>
+        <tag>App</tag>
+        <tag>图片处理</tag>
+        <tag>扫描</tag>
       </tags>
   </entry>
 </search>
