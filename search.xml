@@ -1,37 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Excel数字前（列）批量加0</title>
-    <url>/2022/01/06/Excel-S0/</url>
-    <content><![CDATA[<p>有时从数据库里导出的Excel数据，前面有0的会被去除，行数非常多，处理比较麻烦。最近学到Excel的一招，就是快速给数字类型的值在前面补零。</p>
-<p><img src="https://s4.ax1x.com/2022/01/06/TxGVH0.jpg" alt="excel怎样在数字前加0？批量一次性在数字前加0">](<a href="https://imgtu.com/i/TxGVH0">https://imgtu.com/i/TxGVH0</a>)</p>
-<h1 id="第一步，先通过公式处理得到结果"><a href="#第一步，先通过公式处理得到结果" class="headerlink" title="第一步，先通过公式处理得到结果"></a>第一步，先通过公式处理得到结果</h1><p>在数据这一列侧边插入一列（若数据列侧边有空白列就不用插入列）。</p>
-<p>比如，现在B列是空白列，那么，我们就用B列来操作。</p>
-<p><img src="https://s4.ax1x.com/2022/01/06/TxGEBq.jpg" alt="excel怎样在数字前加0？批量一次性在数字前加0">](<a href="https://imgtu.com/i/TxGEBq">https://imgtu.com/i/TxGEBq</a>)</p>
-<p>接着把B列（或者与左边相同的行数）选中；</p>
-<p>然后，在编辑栏中输入：<strong>＝0&amp;A1</strong></p>
-<p><strong>再按CTRL+回车键。</strong></p>
-<p><img src="https://s4.ax1x.com/2022/01/06/TxGeEV.jpg" alt="excel怎样在数字前加0？批量一次性在数字前加0">](<a href="https://imgtu.com/i/TxGeEV">https://imgtu.com/i/TxGeEV</a>)</p>
-<p><img src="https://s4.ax1x.com/2022/01/06/TxGmNT.jpg" alt="excel怎样在数字前加0？批量一次性在数字前加0">](<a href="https://imgtu.com/i/TxGmNT">https://imgtu.com/i/TxGmNT</a>)</p>
-<p>B列即得出相应的结果；鼠标在其它单元格点下。</p>
-<p><img src="https://s4.ax1x.com/2022/01/06/TxGn4U.jpg" alt="excel怎样在数字前加0？批量一次性在数字前加0">](<a href="https://imgtu.com/i/TxGn4U">https://imgtu.com/i/TxGn4U</a>)</p>
-<p><img src="https://s4.ax1x.com/2022/01/06/TxGKCF.jpg" alt="excel怎样在数字前加0？批量一次性在数字前加0">](<a href="https://imgtu.com/i/TxGKCF">https://imgtu.com/i/TxGKCF</a>)</p>
-<h1 id="第二步，复制粘贴为数值"><a href="#第二步，复制粘贴为数值" class="headerlink" title="第二步，复制粘贴为数值"></a>第二步，复制粘贴为数值</h1><p>如果只是需要显示查看的话，到此就可以结束。</p>
-<p><strong>如果B列可能还要用到导入其它数据库，那么要进行复制粘贴为数值</strong>。</p>
-<p>因为目前B列的值还是公式，而不是最终的数值，导入数据库可能会不识别。</p>
-<p>因此需要再转换一下，复制它们，<strong>最后鼠标右键选择数值粘贴。</strong></p>
-<p><img src="https://s4.ax1x.com/2022/01/06/TxGM34.jpg" alt="excel怎样在数字前加0？批量一次性在数字前加0">](<a href="https://imgtu.com/i/TxGM34">https://imgtu.com/i/TxGM34</a>)</p>
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>Excel</tag>
-        <tag>批量</tag>
-        <tag>技巧</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>解决“索引超出了数组界限”</title>
     <url>/2021/05/31/Config-Array-Out/</url>
     <content><![CDATA[<p>今天踩了个坑。周末加班搞了个异构数据同步的中间件工具，本地调试编译好后部署到正式环境，一直提示：</p>
@@ -50,6 +19,82 @@
       </categories>
       <tags>
         <tag>中间件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo、GitHub、Mongodb、Vercel、Twikoo搭建免费博客</title>
+    <url>/2021/12/05/Hexo-Github-Mongodb-Vercel-Twikoo/</url>
+    <content><![CDATA[<p>很久之前在阿里云撸了几年88元一年的虚拟机，到期后续费太贵了，对于一个不是生产力的网站来说，如果续费就有点飘了，家里又没有矿，没法任性。</p>
+<p>然后发现腾讯云的虚拟机也对新用户优惠，又撸了两年。年初的时候到期了，但一直没有去续费。一是前段时间都比较忙，忘记了；二是续费太贵了。</p>
+<p>就这样，几年的琐琐碎碎就没有了。</p>
+<p>只是可惜了备案，重新再备案已经不再想了，对于网站的备案真的是一言难尽！</p>
+<p>有空了，又想折腾一下。于是就有了这个新的网站。</p>
+<p>不用备案，除了域名，都是白嫖的。</p>
+<p>采用Hexo、Github、Mongodb、Vercel、Twikoo免费搭建，使用的<a href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a>主题。</p>
+<h1 id="一、Hexo-Github-Pages搭建免费博客"><a href="#一、Hexo-Github-Pages搭建免费博客" class="headerlink" title="一、Hexo+Github Pages搭建免费博客"></a>一、Hexo+Github Pages搭建免费博客</h1><p>以前一直使用的WordPress搭建博客，挺好用的，主题模板和插件都非常多，但是唯一不好的就是越来越臃肿，拖慢了访问速度。</p>
+<p>而且没法撸到适合WordPress的免费环境和MySQL。找来找去，最后就决定了使用Hexo+Github Pages搭建。</p>
+<p>具体的搭建步骤，我是参考了知乎上这篇文章完成的，在此就不多说了。</p>
+<blockquote>
+<p>参考文章：<a href="https://zhuanlan.zhihu.com/p/60578464">使用 Hexo+GitHub 搭建个人免费博客教程（小白向）</a></p>
+</blockquote>
+<h1 id="二、Twikoo评论插件"><a href="#二、Twikoo评论插件" class="headerlink" title="二、Twikoo评论插件"></a>二、Twikoo评论插件</h1><p>之前博客搭建好后，一直没有开启评论。现在有空了就折腾一下，根据Twikoo作者的说明文档很快就能搭建好。</p>
+<p>原本可以使用腾讯的免费优惠套餐，但现在没有这个免费套餐了。由于基础版 1 已从 0 元涨价至 6.9 元 / 月，需要付费购买环境才能部署。</p>
+<p>不过免费的还可以用到Mongodb和Vercel来部署完成，只是国内的访问速度比不过腾讯云。</p>
+<blockquote>
+<p>参考文章：<a href="https://twikoo.js.org/quick-start.html#%E4%BA%91%E5%87%BD%E6%95%B0%E9%83%A8%E7%BD%B2">Twikoo云函数部署操作说明</a></p>
+</blockquote>
+<p>需要注意的是，要用到Github的仓库，先在Github创建好一个分支仓库。</p>
+<h1 id="三、将Hexo部署到Vercel"><a href="#三、将Hexo部署到Vercel" class="headerlink" title="三、将Hexo部署到Vercel"></a>三、将Hexo部署到Vercel</h1><p>误打误撞，发现Hexo可以部署到Vercel。</p>
+<p>GitHub Pages有时受DNS污染，无法访问。</p>
+<p>Vercel在港台有 CDN 节点。所以要比GitHub要更快和稳定一些。</p>
+<p>实际还是要使用到GitHub才行，因为Vercel只是一个静态网页部署网站，并不托管代码。</p>
+<p>我们通过 <strong>GitHub 来托管 hexo deploy 生成的网页文件，并设置自动导入。当你的源代码仓库有变动后，Vercel 会第一时间检测到并重新部署网站，部署完成后会通过邮件提醒。</strong></p>
+<blockquote>
+<p>参考文章：<a href="https://snow.js.org/hexo-vercel/">Hexo：将你的博客部署到 Vercel</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Github</tag>
+        <tag>Mongodb</tag>
+        <tag>Vercel</tag>
+        <tag>Twikoo</tag>
+        <tag>网站</tag>
+        <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Excel数字前（列）批量加0</title>
+    <url>/2022/01/06/Excel-S0/</url>
+    <content><![CDATA[<p>有时从数据库里导出的Excel数据，前面有0的会被去除，行数非常多，处理比较麻烦。最近学到Excel的一招，就是快速给数字类型的值在前面补零。</p>
+<p><a href="https://imgtu.com/i/TxGVH0"><img src="https://s4.ax1x.com/2022/01/06/TxGVH0.jpg" alt="TxGVH0.jpg"></a></p>
+<h1 id="第一步，先通过公式处理得到结果"><a href="#第一步，先通过公式处理得到结果" class="headerlink" title="第一步，先通过公式处理得到结果"></a>第一步，先通过公式处理得到结果</h1><p>在数据这一列侧边插入一列（若数据列侧边有空白列就不用插入列）。</p>
+<p>比如，现在B列是空白列，那么，我们就用B列来操作。</p>
+<p><a href="https://imgtu.com/i/TxGEBq"><img src="https://s4.ax1x.com/2022/01/06/TxGEBq.jpg" alt="TxGEBq.jpg"></a></p>
+<p>接着把B列（或者与左边相同的行数）选中；</p>
+<p>然后，在编辑栏中输入：<strong>＝0&amp;A1</strong></p>
+<p><strong>再按CTRL+回车键。</strong></p>
+<p><a href="https://imgtu.com/i/TxGeEV"><img src="https://s4.ax1x.com/2022/01/06/TxGeEV.jpg" alt="TxGeEV.jpg"></a></p>
+<p><a href="https://imgtu.com/i/TxGmNT"><img src="https://s4.ax1x.com/2022/01/06/TxGmNT.jpg" alt="TxGmNT.jpg"></a></p>
+<p>B列即得出相应的结果；鼠标在其它单元格点下。</p>
+<p><a href="https://imgtu.com/i/TxGn4U"><img src="https://s4.ax1x.com/2022/01/06/TxGn4U.jpg" alt="TxGn4U.jpg"></a></p>
+<p><a href="https://imgtu.com/i/TxGKCF"><img src="https://s4.ax1x.com/2022/01/06/TxGKCF.jpg" alt="TxGKCF.jpg"></a></p>
+<h1 id="第二步，复制粘贴为数值"><a href="#第二步，复制粘贴为数值" class="headerlink" title="第二步，复制粘贴为数值"></a>第二步，复制粘贴为数值</h1><p>如果只是需要显示查看的话，到此就可以结束。</p>
+<p><strong>如果B列可能还要用到导入其它数据库，那么要进行复制粘贴为数值</strong>。</p>
+<p>因为目前B列的值还是公式，而不是最终的数值，导入数据库可能会不识别。</p>
+<p>因此需要再转换一下，复制它们，<strong>最后鼠标右键选择数值粘贴。</strong></p>
+<p><a href="https://imgtu.com/i/TxGM34"><img src="https://s4.ax1x.com/2022/01/06/TxGM34.jpg" alt="TxGM34.jpg"></a></p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>Excel</tag>
+        <tag>批量</tag>
+        <tag>技巧</tag>
       </tags>
   </entry>
   <entry>
@@ -157,51 +202,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo、GitHub、Mongodb、Vercel、Twikoo搭建免费博客</title>
-    <url>/2021/12/05/Hexo-Github-Mongodb-Vercel-Twikoo/</url>
-    <content><![CDATA[<p>很久之前在阿里云撸了几年88元一年的虚拟机，到期后续费太贵了，对于一个不是生产力的网站来说，如果续费就有点飘了，家里又没有矿，没法任性。</p>
-<p>然后发现腾讯云的虚拟机也对新用户优惠，又撸了两年。年初的时候到期了，但一直没有去续费。一是前段时间都比较忙，忘记了；二是续费太贵了。</p>
-<p>就这样，几年的琐琐碎碎就没有了。</p>
-<p>只是可惜了备案，重新再备案已经不再想了，对于网站的备案真的是一言难尽！</p>
-<p>有空了，又想折腾一下。于是就有了这个新的网站。</p>
-<p>不用备案，除了域名，都是白嫖的。</p>
-<p>采用Hexo、Github、Mongodb、Vercel、Twikoo免费搭建，使用的<a href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a>主题。</p>
-<h1 id="一、Hexo-Github-Pages搭建免费博客"><a href="#一、Hexo-Github-Pages搭建免费博客" class="headerlink" title="一、Hexo+Github Pages搭建免费博客"></a>一、Hexo+Github Pages搭建免费博客</h1><p>以前一直使用的WordPress搭建博客，挺好用的，主题模板和插件都非常多，但是唯一不好的就是越来越臃肿，拖慢了访问速度。</p>
-<p>而且没法撸到适合WordPress的免费环境和MySQL。找来找去，最后就决定了使用Hexo+Github Pages搭建。</p>
-<p>具体的搭建步骤，我是参考了知乎上这篇文章完成的，在此就不多说了。</p>
-<blockquote>
-<p>参考文章：<a href="https://zhuanlan.zhihu.com/p/60578464">使用 Hexo+GitHub 搭建个人免费博客教程（小白向）</a></p>
-</blockquote>
-<h1 id="二、Twikoo评论插件"><a href="#二、Twikoo评论插件" class="headerlink" title="二、Twikoo评论插件"></a>二、Twikoo评论插件</h1><p>之前博客搭建好后，一直没有开启评论。现在有空了就折腾一下，根据Twikoo作者的说明文档很快就能搭建好。</p>
-<p>原本可以使用腾讯的免费优惠套餐，但现在没有这个免费套餐了。由于基础版 1 已从 0 元涨价至 6.9 元 / 月，需要付费购买环境才能部署。</p>
-<p>不过免费的还可以用到Mongodb和Vercel来部署完成，只是国内的访问速度比不过腾讯云。</p>
-<blockquote>
-<p>参考文章：<a href="https://twikoo.js.org/quick-start.html#%E4%BA%91%E5%87%BD%E6%95%B0%E9%83%A8%E7%BD%B2">Twikoo云函数部署操作说明</a></p>
-</blockquote>
-<p>需要注意的是，要用到Github的仓库，先在Github创建好一个分支仓库。</p>
-<h1 id="三、将Hexo部署到Vercel"><a href="#三、将Hexo部署到Vercel" class="headerlink" title="三、将Hexo部署到Vercel"></a>三、将Hexo部署到Vercel</h1><p>误打误撞，发现Hexo可以部署到Vercel。</p>
-<p>GitHub Pages有时受DNS污染，无法访问。</p>
-<p>Vercel在港台有 CDN 节点。所以要比GitHub要更快和稳定一些。</p>
-<p>实际还是要使用到GitHub才行，因为Vercel只是一个静态网页部署网站，并不托管代码。</p>
-<p>我们通过 <strong>GitHub 来托管 hexo deploy 生成的网页文件，并设置自动导入。当你的源代码仓库有变动后，Vercel 会第一时间检测到并重新部署网站，部署完成后会通过邮件提醒。</strong></p>
-<blockquote>
-<p>参考文章：<a href="https://snow.js.org/hexo-vercel/">Hexo：将你的博客部署到 Vercel</a></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>Github</tag>
-        <tag>Mongodb</tag>
-        <tag>Vercel</tag>
-        <tag>Twikoo</tag>
-        <tag>网站</tag>
-        <tag>博客</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>PSElements2021智能修图，超乎想象</title>
     <url>/2021/05/30/PS-Elements-2021/</url>
     <content><![CDATA[<blockquote>
@@ -242,6 +242,79 @@
         <tag>画画</tag>
         <tag>作品集</tag>
         <tag>美术</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo deploy到GitHub出现Error Spawn failed的解决方法</title>
+    <url>/2021/12/08/hexo-git-deploy-Spawn-failed/</url>
+    <content><![CDATA[<p>最近部署的时候经常出现Error: Spawn failed，怎么都部署不成功。后来折腾了一轮终于找到解决方法。</p>
+<p>最终是使用修改配置文件的方法解决了。</p>
+<h2 id="一、重启电脑"><a href="#一、重启电脑" class="headerlink" title="一、重启电脑"></a>一、重启电脑</h2><p>有的时候可能是因为网络波动产生的错误，请首先尝试。</p>
+<h2 id="二、服务器相关"><a href="#二、服务器相关" class="headerlink" title="二、服务器相关"></a>二、服务器相关</h2><p>如果你的Hexo是部署在服务器时，请注意以下方法</p>
+<p>首先检查服务器是否能被ssh跑通，SERVER填写自己的云主机ip，以git用户为例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SHELL</span><br><span class="line">ssh -v git@SERVER</span><br></pre></td></tr></table></figure>
+
+<h2 id="三、服务器部署"><a href="#三、服务器部署" class="headerlink" title="三、服务器部署"></a>三、服务器部署</h2><p>请一定要检查公钥pub文件是否输入正确</p>
+<p>切换至指定用户，以git用户为例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SHELL</span><br><span class="line">su git</span><br><span class="line">mkdir ~/.ssh</span><br><span class="line">vim ~/.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
+
+<p>将pub文件内容在i编辑模式下粘贴进去，请特别检查开头和结尾。</p>
+<p>按<code>esc</code>后输入<code>:wq</code>退出</p>
+<h2 id="四、服务器文件权限问题"><a href="#四、服务器文件权限问题" class="headerlink" title="四、服务器文件权限问题"></a>四、服务器文件权限问题</h2><p>如果你部署的账户没有文件夹权限，则可能会出现权限问题，以git用户为例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SHELL</span><br><span class="line">chown -R git:git /var/repo/</span><br><span class="line">chown -R git:git /var/hexo/</span><br></pre></td></tr></table></figure>
+
+<h2 id="五、使用Github部署"><a href="#五、使用Github部署" class="headerlink" title="五、使用Github部署"></a>五、使用Github部署</h2><p>如果使用GitHub，可以尝试是否能跑通GitHub</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SHELL</span><br><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+<h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><p>打开_config.yml配置文件</p>
+<p>修改以下内容</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CODE</span><br><span class="line">deploy:</span><br><span class="line"></span><br><span class="line">type: git</span><br><span class="line"></span><br><span class="line">repo: https://github.com/yourname/yourname.github.io.git</span><br><span class="line"></span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
+
+<p>其中的repo修改为</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CODE</span><br><span class="line">repo: git@github.com:yourname/yourname.github.io.git</span><br></pre></td></tr></table></figure>
+
+<h2 id="六、本地文件产生的问题"><a href="#六、本地文件产生的问题" class="headerlink" title="六、本地文件产生的问题"></a>六、本地文件产生的问题</h2><p>如果你是本地文件产生错误，可以考虑以下方式。</p>
+<h3 id="重置git的deploy文件夹"><a href="#重置git的deploy文件夹" class="headerlink" title="重置git的deploy文件夹"></a>重置git的deploy文件夹</h3><p><a href="https://1187100546.github.io/2019/11/24/spawn-failed/">huahua</a>提供的方法，删除博客文件夹中的<code>.deploy_git</code>文件夹，然后在终端cd这个文件夹后输入<code>git config --global core.autocrlf false</code></p>
+<h3 id="删除lock文件"><a href="#删除lock文件" class="headerlink" title="删除lock文件"></a>删除lock文件</h3><p><a href="http://ciraos.top/">小青</a>提供的方法：找到<code>.deploy_git</code>文件夹中的<code>index.lock</code>文件，删除就好了。</p>
+<h2 id="七、强制推送（不推荐）"><a href="#七、强制推送（不推荐）" class="headerlink" title="七、强制推送（不推荐）"></a>七、强制推送（不推荐）</h2><p>cd进<code>.deploy_git</code>文件夹，然后使用<code>git push -f</code>强制推送</p>
+<h2 id="八、回滚版本"><a href="#八、回滚版本" class="headerlink" title="八、回滚版本"></a>八、回滚版本</h2><p><a href="https://perry96.com/archives/882898e3.html">Perry</a>提供的方法</p>
+<p>打开<code>.deploy_git\.git\logs</code>路径下的<code>HEAD</code>查看最近一次正确的那次的<code>commitId</code>然后用<code>git reset --hard commitId</code>回滚</p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>GitHub</tag>
+        <tag>Deploy</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>绿色版Tomcat8.5开机启动服务配置方法</title>
+    <url>/2021/05/21/hello-world/</url>
+    <content><![CDATA[<p>主要就是添加系统环境变量和注册到服务管理。</p>
+<h2 id="添加系统环境变量Path值"><a href="#添加系统环境变量Path值" class="headerlink" title="添加系统环境变量Path值"></a>添加系统环境变量Path值</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">;D:\apache-tomcat-8.5.53\bin</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="CMD进入bin目录安装服务"><a href="#CMD进入bin目录安装服务" class="headerlink" title="CMD进入bin目录安装服务"></a>CMD进入bin目录安装服务</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd d:</span><br><span class="line">D:\&gt;cd D:\apache-tomcat-8.5.53\bin</span><br><span class="line">D:\apache-tomcat-8.5.53\bin&gt;service.bat install</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="安装成功提示"><a href="#安装成功提示" class="headerlink" title="安装成功提示"></a>安装成功提示</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Installing the service &#x27;Tomcat8&#x27; ...</span><br><span class="line">Using CATALINA_HOME:    &quot;D:\apache-tomcat-8.5.53&quot;</span><br><span class="line">Using CATALINA_BASE:    &quot;D:\apache-tomcat-8.5.53&quot;</span><br><span class="line">Using JAVA_HOME:        &quot;D:\Java\jdk1.8.0_221&quot;</span><br><span class="line">Using JRE_HOME:         &quot;D:\Java\jdk1.8.0_221\jre&quot;</span><br><span class="line">Using JVM:              &quot;D:\Java\jdk1.8.0_221\jre\bin\server\jvm.dll&quot;</span><br><span class="line">The service &#x27;Tomcat8&#x27; has been installed.</span><br></pre></td></tr></table></figure>
+
+<h2 id="启动Tomcat"><a href="#启动Tomcat" class="headerlink" title="启动Tomcat"></a>启动Tomcat</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">D:\apache-tomcat-8.5.53\bin&gt;net start Tomcat8</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="配置开机启动"><a href="#配置开机启动" class="headerlink" title="配置开机启动"></a>配置开机启动</h2><p>进入系统服务管理找到Tomcat8属性设置自启动，或者通过bin目录下的tomcat8w.exe设置自动启动。</p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>Tomcat</tag>
+        <tag>绿色版</tag>
       </tags>
   </entry>
   <entry>
@@ -319,79 +392,6 @@
         <tag>纪录片</tag>
         <tag>儿童</tag>
         <tag>电影</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>绿色版Tomcat8.5开机启动服务配置方法</title>
-    <url>/2021/05/21/hello-world/</url>
-    <content><![CDATA[<p>主要就是添加系统环境变量和注册到服务管理。</p>
-<h2 id="添加系统环境变量Path值"><a href="#添加系统环境变量Path值" class="headerlink" title="添加系统环境变量Path值"></a>添加系统环境变量Path值</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">;D:\apache-tomcat-8.5.53\bin</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="CMD进入bin目录安装服务"><a href="#CMD进入bin目录安装服务" class="headerlink" title="CMD进入bin目录安装服务"></a>CMD进入bin目录安装服务</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd d:</span><br><span class="line">D:\&gt;cd D:\apache-tomcat-8.5.53\bin</span><br><span class="line">D:\apache-tomcat-8.5.53\bin&gt;service.bat install</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="安装成功提示"><a href="#安装成功提示" class="headerlink" title="安装成功提示"></a>安装成功提示</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Installing the service &#x27;Tomcat8&#x27; ...</span><br><span class="line">Using CATALINA_HOME:    &quot;D:\apache-tomcat-8.5.53&quot;</span><br><span class="line">Using CATALINA_BASE:    &quot;D:\apache-tomcat-8.5.53&quot;</span><br><span class="line">Using JAVA_HOME:        &quot;D:\Java\jdk1.8.0_221&quot;</span><br><span class="line">Using JRE_HOME:         &quot;D:\Java\jdk1.8.0_221\jre&quot;</span><br><span class="line">Using JVM:              &quot;D:\Java\jdk1.8.0_221\jre\bin\server\jvm.dll&quot;</span><br><span class="line">The service &#x27;Tomcat8&#x27; has been installed.</span><br></pre></td></tr></table></figure>
-
-<h2 id="启动Tomcat"><a href="#启动Tomcat" class="headerlink" title="启动Tomcat"></a>启动Tomcat</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">D:\apache-tomcat-8.5.53\bin&gt;net start Tomcat8</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="配置开机启动"><a href="#配置开机启动" class="headerlink" title="配置开机启动"></a>配置开机启动</h2><p>进入系统服务管理找到Tomcat8属性设置自启动，或者通过bin目录下的tomcat8w.exe设置自动启动。</p>
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>Tomcat</tag>
-        <tag>绿色版</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo deploy到GitHub出现Error Spawn failed的解决方法</title>
-    <url>/2021/12/08/hexo-git-deploy-Spawn-failed/</url>
-    <content><![CDATA[<p>最近部署的时候经常出现Error: Spawn failed，怎么都部署不成功。后来折腾了一轮终于找到解决方法。</p>
-<p>最终是使用修改配置文件的方法解决了。</p>
-<h2 id="一、重启电脑"><a href="#一、重启电脑" class="headerlink" title="一、重启电脑"></a>一、重启电脑</h2><p>有的时候可能是因为网络波动产生的错误，请首先尝试。</p>
-<h2 id="二、服务器相关"><a href="#二、服务器相关" class="headerlink" title="二、服务器相关"></a>二、服务器相关</h2><p>如果你的Hexo是部署在服务器时，请注意以下方法</p>
-<p>首先检查服务器是否能被ssh跑通，SERVER填写自己的云主机ip，以git用户为例：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SHELL</span><br><span class="line">ssh -v git@SERVER</span><br></pre></td></tr></table></figure>
-
-<h2 id="三、服务器部署"><a href="#三、服务器部署" class="headerlink" title="三、服务器部署"></a>三、服务器部署</h2><p>请一定要检查公钥pub文件是否输入正确</p>
-<p>切换至指定用户，以git用户为例：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SHELL</span><br><span class="line">su git</span><br><span class="line">mkdir ~/.ssh</span><br><span class="line">vim ~/.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
-
-<p>将pub文件内容在i编辑模式下粘贴进去，请特别检查开头和结尾。</p>
-<p>按<code>esc</code>后输入<code>:wq</code>退出</p>
-<h2 id="四、服务器文件权限问题"><a href="#四、服务器文件权限问题" class="headerlink" title="四、服务器文件权限问题"></a>四、服务器文件权限问题</h2><p>如果你部署的账户没有文件夹权限，则可能会出现权限问题，以git用户为例</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SHELL</span><br><span class="line">chown -R git:git /var/repo/</span><br><span class="line">chown -R git:git /var/hexo/</span><br></pre></td></tr></table></figure>
-
-<h2 id="五、使用Github部署"><a href="#五、使用Github部署" class="headerlink" title="五、使用Github部署"></a>五、使用Github部署</h2><p>如果使用GitHub，可以尝试是否能跑通GitHub</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SHELL</span><br><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-
-<h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><p>打开_config.yml配置文件</p>
-<p>修改以下内容</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CODE</span><br><span class="line">deploy:</span><br><span class="line"></span><br><span class="line">type: git</span><br><span class="line"></span><br><span class="line">repo: https://github.com/yourname/yourname.github.io.git</span><br><span class="line"></span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
-
-<p>其中的repo修改为</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CODE</span><br><span class="line">repo: git@github.com:yourname/yourname.github.io.git</span><br></pre></td></tr></table></figure>
-
-<h2 id="六、本地文件产生的问题"><a href="#六、本地文件产生的问题" class="headerlink" title="六、本地文件产生的问题"></a>六、本地文件产生的问题</h2><p>如果你是本地文件产生错误，可以考虑以下方式。</p>
-<h3 id="重置git的deploy文件夹"><a href="#重置git的deploy文件夹" class="headerlink" title="重置git的deploy文件夹"></a>重置git的deploy文件夹</h3><p><a href="https://1187100546.github.io/2019/11/24/spawn-failed/">huahua</a>提供的方法，删除博客文件夹中的<code>.deploy_git</code>文件夹，然后在终端cd这个文件夹后输入<code>git config --global core.autocrlf false</code></p>
-<h3 id="删除lock文件"><a href="#删除lock文件" class="headerlink" title="删除lock文件"></a>删除lock文件</h3><p><a href="http://ciraos.top/">小青</a>提供的方法：找到<code>.deploy_git</code>文件夹中的<code>index.lock</code>文件，删除就好了。</p>
-<h2 id="七、强制推送（不推荐）"><a href="#七、强制推送（不推荐）" class="headerlink" title="七、强制推送（不推荐）"></a>七、强制推送（不推荐）</h2><p>cd进<code>.deploy_git</code>文件夹，然后使用<code>git push -f</code>强制推送</p>
-<h2 id="八、回滚版本"><a href="#八、回滚版本" class="headerlink" title="八、回滚版本"></a>八、回滚版本</h2><p><a href="https://perry96.com/archives/882898e3.html">Perry</a>提供的方法</p>
-<p>打开<code>.deploy_git\.git\logs</code>路径下的<code>HEAD</code>查看最近一次正确的那次的<code>commitId</code>然后用<code>git reset --hard commitId</code>回滚</p>
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>GitHub</tag>
-        <tag>Deploy</tag>
       </tags>
   </entry>
   <entry>
